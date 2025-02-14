@@ -19,6 +19,7 @@
 package net.mcreator.generator;
 
 import net.mcreator.generator.mapping.MappingLoader;
+import net.mcreator.ui.dialogs.workspace.CustomGeneratorWorkspacePanel;
 
 import java.io.File;
 
@@ -49,7 +50,11 @@ public interface IGenerator extends IGeneratorProvider {
 	}
 
 	default String getGeneratorBuildFileVersion() {
-		return getGeneratorConfiguration().getGeneratorBuildFileVersion();
+		if(GeneratorConfiguration.getGeneratorFlavor().equals(GeneratorFlavor.CUSTOM)){
+		return CustomGeneratorWorkspacePanel.getBuildfileVersion();
+	}else {
+			return getGeneratorConfiguration().getGeneratorBuildFileVersion();
+		}
 	}
 
 	default String getFullGeneratorVersion() {

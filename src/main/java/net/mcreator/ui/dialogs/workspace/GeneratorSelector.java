@@ -44,7 +44,7 @@ public class GeneratorSelector {
 	public static final String covpfx = "dialog.generator_selector.coverage.";
 
 	private static final List<GeneratorFlavor> compatible1 = List.of(GeneratorFlavor.FORGE, GeneratorFlavor.FABRIC,
-			GeneratorFlavor.NEOFORGE, GeneratorFlavor.QUILT);
+			GeneratorFlavor.NEOFORGE, GeneratorFlavor.QUILT, GeneratorFlavor.CUSTOM);
 
 	/**
 	 * <p>Open a dialog window to select a {@link Generator} from the loaded generators. </p>

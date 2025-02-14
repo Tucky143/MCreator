@@ -18,6 +18,7 @@
 
 package net.mcreator.generator;
 
+import net.mcreator.ui.dialogs.workspace.CustomGeneratorWorkspacePanel;
 import net.mcreator.ui.init.UIRES;
 import net.mcreator.util.image.EmptyIcon;
 
@@ -37,18 +38,19 @@ public enum GeneratorFlavor {
 	DATAPACK(GamePlatform.JAVAEDITION, BaseLanguage.JSON),
 	RESOURCEPACK(GamePlatform.JAVAEDITION, BaseLanguage.JSON),
 	ADDON(GamePlatform.BEDROCKEDITION, BaseLanguage.JSON),
+	CUSTOM(GamePlatform.JAVAEDITION, BaseLanguage.valueOf(CustomGeneratorWorkspacePanel.getBaseLanguage())),
 	UNKNOWN(null, null);
 	//@formatter:on
 
 	/**
 	 * Official flavors are flavors that MCreator supports in its core.
 	 */
-	public static final List<GeneratorFlavor> OFFICIAL_FLAVORS = List.of(FORGE, DATAPACK, RESOURCEPACK, ADDON, NEOFORGE);
+	public static final List<GeneratorFlavor> OFFICIAL_FLAVORS = List.of(FORGE, DATAPACK, RESOURCEPACK, ADDON, NEOFORGE, CUSTOM);
 
 	/**
 	 * Special flavors are flavors that are not full modding APIs, and therefore we assume no covered METs by default.
 	 */
-	public static final List<GeneratorFlavor> SPECIAL_FLAVORS = List.of(QUILT);
+	public static final List<GeneratorFlavor> SPECIAL_FLAVORS = List.of(QUILT, CUSTOM);
 
 	private final BaseLanguage baseLanguage;
 

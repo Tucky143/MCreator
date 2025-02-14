@@ -61,7 +61,7 @@ public class GeneratorConfiguration implements Comparable<GeneratorConfiguration
 	private final DefinitionsProvider definitionsProvider;
 	private final GeneratorStats generatorStats;
 
-	private final GeneratorFlavor generatorFlavor;
+	private static GeneratorFlavor generatorFlavor;
 
 	private final GeneratorVariableTypes generatorVariableTypes;
 
@@ -202,7 +202,7 @@ public class GeneratorConfiguration implements Comparable<GeneratorConfiguration
 		return paths;
 	}
 
-	public GeneratorFlavor getGeneratorFlavor() {
+	public static GeneratorFlavor getGeneratorFlavor() {
 		return generatorFlavor;
 	}
 
